@@ -16,7 +16,7 @@ var headers;
     time = new Date;
     unixTime = parseInt(time.getTime() / 1000);
     unixDate = new Date(unixTime * 1000);
-    string = unixDate + " , " + userAgent + "\n";
+    string = unixDate + " , " + userAgent.replace(',', '') + "\n";
 
     fs.exists('hw_1.csv', function(exists){
       if(!exists){
