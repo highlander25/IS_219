@@ -18,19 +18,21 @@ var headers;
     unixDate = new Date(unixTime * 1000);
     string = unixDate + " , " + userAgent + "\n";
 
-    fs.exists('homework_1.csv', function(){
-      if(!'homework_1.csv'){
+    fs.exists('hw_1.csv', function(exists){
+      if(!exists){
 
-        fs.writeFile('homework_1.csv', headers, function(err){
+        fs.writeFile('hw_1.csv', headers, function(err){
           if (err) throw (err);
         });
 
       }else{
 
-        fs.appendFile('homework_1.csv', string, function(err){
+        fs.appendFile('hw_1.csv', string, function(err){
           if(err) throw(err);
         });
       }
 
+
+    });
 
   });
